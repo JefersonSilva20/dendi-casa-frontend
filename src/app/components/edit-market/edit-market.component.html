@@ -1,0 +1,35 @@
+<div class="register-container row">
+    <div class="content">
+        <section>
+            <img class="img-fluid" [src]=logoImg alt="Tudo em Casa" />
+            <h1><strong>Atualizar Negócio</strong></h1>
+            <p>Seu negócio mudou? Digitou algum dado errado? Não tem problema! Atualize os dados para que todos os clientes da cidade de
+                Mamanguape possam te encontrar.
+            </p>
+            <a [routerLink]="['/meus-negocios']" routerLinkActive="router-link-active" class="link"><i
+                    class="material-icons">arrow_back</i> Retornar para os meus negócios</a>
+        </section>
+        <form [formGroup]="form">
+            <input formControlName="name" type="text" placeholder="Nome do Negócio" />
+            <textarea formControlName="description" name="description" placeholder="Descrição" cols="30" rows="3"></textarea>
+            <span *ngIf="form.get('description').hasError('maxlength')">A descrição deve ter no máximo 128 caracteres.</span>
+            <div class="social-network d-flex justify-content-between">
+                <input formControlName="phone" class="wpp" type="text" placeholder="Telefone" />
+                <input formControlName="instagram" type="text" placeholder="Instagram" />
+            </div>
+            <div class="categorie input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Categoria:</label>
+                </div>
+                <select formControlName="categorie" class="custom-select" id="inputGroupSelect01">
+                    <option  *ngFor="let cat of categories" [value]="cat.name">
+                        {{cat.name}}
+                    </option>
+                </select>
+            </div>
+            <button [disabled]=form.invalid (click)="updateMarket()" class="button" type="button">Atualizar Negócio</button>
+            <a [routerLink]="['/meus-negocios']" routerLinkActive="router-link-active" class="link smart"><i
+                    class="material-icons">arrow_back</i> Retornar para os meus negócios</a>
+        </form>
+    </div>
+</div>

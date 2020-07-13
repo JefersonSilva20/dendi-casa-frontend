@@ -1,0 +1,86 @@
+.register-container {
+    width    : 100%;
+    max-width: 1120px;
+    height   : 100vh;
+    margin   : 0 auto;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.register-container .content {
+    width          : 100%;
+    padding        : 96px;
+    background     : #F0F0F5;
+    box-shadow     : 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius  : 8px;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.register-container .content section {
+    width    : 100%;
+    max-width: 380px;
+}
+
+.register-container .content section h1 {
+    margin   : 64px 0 32px;
+    font-size: 32px;
+}
+
+.register-container .content section p {
+    font-size  : 18px;
+    color      : #737380;
+    line-height: 32px;
+}
+
+.register-container .content form {
+    width    : 100%;
+    max-width: 450px;
+}
+
+form p.error-text {
+    color : brown;
+    margin-left: 8px;
+}
+
+.register-container .content form .social-network .wpp {
+    margin-right: 8px;
+}
+
+.register-container .content form a {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .register-container .content {
+        display        : flex;
+        flex-direction : column;
+        align-items    : center;
+        justify-content: center;
+        padding        : 32px;
+        box-shadow     : none;
+    }
+
+    .register-container .content section a {
+        display: none;
+    }
+
+    .register-container .content form a {
+        display        : flex;
+        margin-top     : 16px;
+        justify-content: flex-start;
+    }
+
+    .register-container .content section h1 {
+        margin   : 32px 0 16px;
+        font-size: 32px;
+    }
+
+    a.link{
+        font-size: medium;
+    }
+
+}

@@ -1,0 +1,83 @@
+.logon-container {
+    width : 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+section.form {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    padding        : 0 32px;
+}
+
+section.form form {
+    margin-top: 8px;
+    width     : 100%;
+    max-width : 450px;
+}
+
+section.form form button {
+    margin-bottom: 8px;
+
+}
+
+p.error-text {
+    color        : brown;
+    margin-bottom: 8px;
+    margin-left  : 8px;
+    font-weight  : bold;
+}
+
+section.form img {
+    max-height: 120px;
+}
+
+section.form form h1 {
+    font-size : 32px;
+    margin-top: 16px;
+}
+
+img.banner {
+    width: 100%;
+}
+
+div a.link {
+    margin-top: 8px;
+}
+
+@media (max-width: 767.98px) {
+
+    .banner {
+        display: none;
+    }
+
+    .logon-container {
+        padding: 8px;
+        width  : 100%;
+    }
+
+    div a.link {
+        font-size: medium;
+    }
+
+    section.form {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        padding        : 0 8px;
+    }
+
+    section.form img {
+        margin-top: 32px;
+        padding   : 0;
+    }
+
+    section.form form {
+        margin-top: 16px;
+    }
+
+
+}

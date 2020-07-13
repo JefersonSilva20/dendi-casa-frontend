@@ -1,0 +1,45 @@
+<div class="logon-container row">
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <section class="form">
+            <img class="img-fluid" [src]=logoImgSrc>
+            <form [formGroup]="form">
+                <h1><strong>{{title}}</strong></h1>
+                <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <input formControlName="formAccess" style="width: 30px;margin-right: 2px;" type="radio"
+                            id="negociante" name="formAccess" value="negociante">
+                        <label style="font-size: 20px;font-family: 'Courgette';"
+                            for="lojista"><strong>Negociante</strong></label><br>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <input formControlName="formAccess" style="width: 30px; margin-right: 2px;" type="radio"
+                            id="cliente" name="formAccess" value="cliente">
+                        <label style="font-size: 20px; font-family: 'Courgette';"
+                            for="cliente"><strong>Cliente</strong></label><br>
+                    </div>
+                </div>
+                <form [formGroup]="form" *ngIf="form.get('formAccess').value=='negociante'">
+                    <input formControlName="email" type="text" name="email" placeholder="Seu Email">
+                    <!--<span *ngIf="form.get('username').hasError('email')" class="error-text">Email precisa ser válido.</span>-->
+                    <input formControlName="password" type="password" name="password" placeholder="Sua Senha">
+                    <p *ngIf="!loginFail" class="error-text">Email ou senha incorretos.</p>
+                    <button class="button" type="button" (click)="login()">{{textButton}}</button>
+                    <div id="sign-control" class="d-flex flex-row justify-content-around">
+                        <a class="link" [routerLink]="['/cadastro']">Realizar cadastro<i
+                                class="material-icons">arrow_forward</i></a>
+                        <a class="link" [routerLink]="['/resetar-senha']">Esqueci minha senha<i
+                                class="material-icons">lock</i></a>
+                    </div>
+                </form>
+                <div *ngIf="form.get('formAccess').value=='cliente'">
+                    <button style="background-color: #107EA3;" class="button" type="button"
+                        (click)="anonimousAccess()">Entrar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-start">
+        <img class="banner img-fluid" [src]=bannerImgSrc alt="House">
+    </div>
+
+</div>

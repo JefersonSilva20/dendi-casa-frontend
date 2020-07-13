@@ -1,0 +1,23 @@
+<div class="register-container row">
+    <div class="content">
+        <section>
+            <img class="img-fluid" [src]=logoImg alt="Tudo em Casa" />
+            <h1><strong>Cadastro</strong></h1>
+            <p>Faça seu cadastro, entre na plataforma e conecte-se com todos os negociantes da cidade de Mamanguape.
+            </p>
+            <a [routerLink]="['']" routerLinkActive="router-link-active" class="link" href=""><i
+                    class="material-icons">arrow_back</i> Fazer logon</a>
+        </section>
+        <form [formGroup]="form">
+            <input formControlName="name" type="text" placeholder="Seu Nome" />
+            <p *ngIf="form.get('name').hasError('required')&&form.get('name').hasError('minlength')" class="error-text">Nome é obrigatório.</p>
+            <input formControlName="email" type="email" placeholder="Seu Email" />
+            <p *ngIf="form.get('email').hasError('email')" class="error-text">Email precisa ser válido.</p>
+            <input formControlName="password" type="password" placeholder="Senha" />
+            <p *ngIf="form.get('password').hasError('minlength')" class="error-text">Senha precisa ter no mínimo 8 caracteres</p>
+            <button [disabled]="!form.valid" (click)="cadastre()" class="button" type="button">Cadastrar</button>
+            <a [routerLink]="['']" routerLinkActive="router-link-active" class="link smart"><i
+                    class="material-icons">arrow_back</i> Fazer logon</a>
+        </form>
+    </div>
+</div>

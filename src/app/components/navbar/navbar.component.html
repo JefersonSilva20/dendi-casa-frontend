@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow p-2 sticky-top">
+    <div class="control d-flex justify-content-{{(displayName)?'between':'arround'}} align-items-center">
+        <a *ngIf="displayName" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <a class="navbar-brand" [routerLink]="['/home']">
+            <img class=" img-fluid logo" src="../../../assets/logo.svg" alt="Be The Hero" />
+        </a>
+        <h2 class="mesage-medium-screen">Olá, {{(displayName)?displayName:'Cliente'}}</h2>
+        <a *ngIf="displayName" (click)="logout()" class="link logout"><i class="material-icons">power_settings_new</i></a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a *ngIf="displayName" [routerLink]="['/meus-negocios']" type="button" class="link edit-button">Meus Negócios</a>
+            <a *ngIf="displayName" [routerLink]="['/cadastro-negocio']" type="button" class="link">Cadastrar Negócio</a>
+            <!--<a type="button" class="link user"><i class="material-icons">account_circle</i></a>-->
+            <a *ngIf="displayName" (click)="logout()" type="button" class="link logout"><i class="material-icons">power_settings_new</i></a>
+        </div>
+    </div>
+    <div class="mesage-small-screen">
+        <h2>Olá, {{(displayName)?displayName:'Cliente'}}</h2>
+    </div>
+</nav>

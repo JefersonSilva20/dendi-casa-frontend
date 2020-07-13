@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div #top class="home-container">
+    <article class="col d-flex flex-column justify-content-center align-items-center">
+        <h1>O que você procura?</h1>
+        <section class="categories">
+            <ul class="list-group">
+                <a (click)="setCategorie(categorie.name)" [routerLink]="['/negocios']" *ngFor="let categorie of categories">
+                    <li class="list-group-item">
+                        <img class="img-fluid" [src]=categorie.imageURL alt="">
+                        <h2>{{categorie.name}}</h2>
+                    </li>
+                </a>
+                <div class="to-top">
+                    <button class="to-top-button" (click)="gotoTop()"><i
+                            class="material-icons">keyboard_arrow_up</i></button>
+                </div>
+            </ul>
+        </section>
+    </article>
+</div>

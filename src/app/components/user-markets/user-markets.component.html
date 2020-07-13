@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div #top class="home-container">
+    <article class="col d-flex flex-column justify-content-center align-items-center">
+        <h1>Meus Negócios</h1>
+        <section class="categories">
+            <ul class="list-group align-item-stretch">
+                <a (click)="editMarket(market)" *ngFor="let market of markets">
+                    <mat-card>
+                        <li class="list-group-item">
+                            <strong>Nome:</strong>
+                            <p>{{ market.name }}</p>
+                            <strong>Descrição:</strong>
+                            <p>{{ market.description }}</p>
+                            <strong>Categoria:</strong>
+                            <p>{{ market.categorie }}</p>
+                            <strong>Telefone:</strong>
+                            <p>{{ market.phone }}</p>
+                            <strong>Instagram:</strong>
+                            <p>{{ market.instagram }}</p>
+                            <i (click)="deleteMarket(market); $event.preventDefault(); $event.stopPropagation();"
+                                class="material-icons">
+                                delete
+                            </i>
+                            <img [src]=getImageURL(market.categorie) alt="">
+                        </li>
+                    </mat-card>
+                </a>
+            </ul>
+        </section>
+    </article>
+</div>

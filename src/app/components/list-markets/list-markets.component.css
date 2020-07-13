@@ -1,0 +1,119 @@
+.container-row {
+    display         : flex;
+    flex-direction  : row;
+    justify-content : center;
+    align-items     : flex-start;
+    background-color: transparent;
+    margin          : 16px;
+}
+
+div.categories {
+    /*border: 2px solid yellow;*/
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    margin-right   : 16px;
+}
+
+mat-card.header-categories {
+    width           : 100%;
+    background-color: #107EA3;
+    color           : white;
+    text-align      : center;
+    font-family     : 'Courgette';
+}
+
+mat-card.categories-card {
+    /*border: 2px solid blue;*/
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+    margin         : 0 8px;
+    overflow       : auto;
+}
+
+mat-button-toggle-group {
+    width: 100%;
+}
+
+mat-button-toggle {
+    font-family: 'Courgette';
+    font-size  : large;
+}
+
+div.table-content {
+    width          : 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+}
+
+
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    width    : 100%;
+    font-size: large;
+}
+
+th {
+    font-size       : medium;
+    background-color: #107EA3;
+    color           : white;
+    font-weight     : bold;
+
+}
+
+/*Css animated detail market*/
+td {
+    border-color: #d3d3d3;
+}
+
+tr.example-detail-row {
+    height             : 0;
+    border-bottom-width: 0;
+    border-top-width   : 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: whitesmoke;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+    border-top-width   : 0;
+}
+
+.example-element-detail {
+    overflow    : hidden;
+    display     : flex;
+    border-color: transparent;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+@media (max-width: 991.98px) {
+    .container-row {
+        flex-direction: column;
+    }
+
+    div.categories {
+        display: none;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
+}
